@@ -1,14 +1,14 @@
-import { Body, ConflictException, Inject, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
-import { RegisterRequest } from './dto/register.dto';
-import { LoginDto } from './dto/login.dto';
+import { ConflictException, Inject, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
-import type { JwtPayload } from './interfaces/jwt.interface';
 import type { Request, Response } from 'express';
 import { isDev } from 'src/utils/is-dev.util';
 import { PasswordHelper } from '../common/helpers/password.helper';
-import { type AuthOptions, AuthOptionsSymbol } from './interfaces/spotify-options.interface';
+import { PrismaService } from '../prisma/prisma.service';
+import { LoginDto } from './dto/login.dto';
+import { RegisterRequest } from './dto/register.dto';
+import { type AuthOptions, AuthOptionsSymbol } from './interfaces/auth-options.interface';
+import type { JwtPayload } from './interfaces/jwt.interface';
 
 @Injectable()
 export class AuthService {

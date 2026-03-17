@@ -1,5 +1,5 @@
 import { ConfigService } from "@nestjs/config";
-import { AuthOptions } from "src/auth/interfaces/spotify-options.interface";
+import { AuthOptions } from "src/auth/interfaces/auth-options.interface";
 
 export function getAuthConfig(
 	configService: ConfigService
